@@ -1,6 +1,8 @@
 # Hacknight
 
-Don't know what it is yet...
+VIM implementation in Scala... in 2 hours.
+
+https://gist.github.com/amirrajan/5666701
 
 ## Dev Setup
 
