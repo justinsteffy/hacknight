@@ -1,0 +1,8 @@
+.classpath
+.project
+target/
+results/
+.cache
+.ensime
+.ensime_lucene
+orgsync-gatling.sublime-project
