@@ -12,6 +12,12 @@ class Editor(var state: EditorState = EditorState("", 0)) {
      state
    }
   
+  def executeCommand(commandStr: String) = {
+    val command = CommandFactory.stringToCommand(commandStr)
+    state = command.commandExec(state)
+    state
+  }
+  
   def content = state.content
   def position = state.position
 

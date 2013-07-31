@@ -43,7 +43,14 @@ class EditorSpec extends FunSpec with ShouldMatchers with BeforeAndAfter {
     
     describe("execute command") {
     	it("moves left using h") {
-    	  editor.executeCommand("h")
+    	  editor = new Editor(EditorState("abc", 2))
+    	  val state = editor.executeCommand("h")
+    	  state.position should be(1)
+    	}
+    	
+    	it("doesn't move left past the beginning") {
+    	  val state = editor.executeCommand("h")
+    	  state.position should be(0)
     	}
     }
   }
