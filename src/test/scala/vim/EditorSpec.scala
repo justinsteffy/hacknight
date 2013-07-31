@@ -42,7 +42,9 @@ class EditorSpec extends FunSpec with ShouldMatchers with BeforeAndAfter {
     }
     
     describe("execute command") {
-
+    	it("moves left using h") {
+    	  editor.executeCommand("h")
+    	}
     }
   }
   
