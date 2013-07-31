@@ -33,12 +33,16 @@ class EditorSpec extends FunSpec with ShouldMatchers with BeforeAndAfter {
       }
       
       it("inserts at the current position") {
-        editor = new Editor(new StringBuilder("abc"))
+        editor = new Editor(EditorState("abc", 0))
         
         editor.insertText(text)
         editor.content.toString should be(text + "abc")
       }
       
+    }
+    
+    describe("execute command") {
+
     }
   }
   
