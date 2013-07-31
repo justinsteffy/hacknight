@@ -1,14 +1,12 @@
 package vim
 
-class Editor(var state: EditorState = EditorState("", 0)) {
+class Editor(var state: EditorState = EditorState(Vector(""), (0, 0))) {
   
   def insertText(text: String) = {
-    val content = new StringBuilder(state.content)
-    var position = state.position
-     content.insert(position, text)
-     position += text.length - 1
+     val newLine = new StringBuilder(line).insert(col, text).toString
+     val newPosition = (row, col + text.length - 1)
      
-     state = EditorState(content.toString, position)
+     state = EditorState(state.content.updated(row, newLine), newPosition)
      state
    }
   
@@ -18,7 +16,8 @@ class Editor(var state: EditorState = EditorState("", 0)) {
     state
   }
   
-  def content = state.content
-  def position = state.position
+  def line = state.line
+  def row = state.row
+  def col = state.col
 
 }
